@@ -18,13 +18,13 @@ This project focuses on **logic, data modeling, and insight generation**, not ju
 
  Key Features
 
-✔ Interactive user-driven inputs
-✔ Multi-platform review support
-✔ Robust date-range filtering
-✔ Topic classification using keyword heuristics
-✔ Trend analysis via frequency aggregation
-✔ Clean, structured JSON output
-✔ Graceful error handling and validations
+1. Interactive user-driven inputs
+2. Multi-platform review support
+3. Robust date-range filtering
+4. Topic classification using keyword heuristics
+5. Trend analysis via frequency aggregation
+6. Clean, structured JSON output
+7 .Graceful error handling and validations
 
 
 
@@ -134,5 +134,6 @@ Tech Stack
 * **Python**
 * **JSON**
 * `datetime`, `collections`, `os`
+
 
 
