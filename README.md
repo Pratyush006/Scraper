@@ -1,115 +1,138 @@
-# Review Scraper and Trend Analysis
 
-## About the Project
-This project is a Python script that analyzes product reviews from popular SaaS review platforms such as **G2**, **Capterra**, and **TrustRadius**.  
-The script takes user input, filters reviews based on a given date range, and generates insights in the form of a topic-wise trend table.
+ Review Intelligence & Trend Analyzer
 
-The main goal of this project is to show how review data can be structured, filtered, and analyzed to identify common user feedback themes.
+ Project Overview
 
----
+This project is a **Python-based review analysis engine** that transforms raw SaaS product reviews into **actionable insights**.
+It simulates data extraction from leading review platforms—**G2**, **Capterra**, and **TrustRadius**—and performs **date-based filtering, topic classification, and trend analysis**.
 
-## What the Script Does
-- Takes company name, review source, and date range as input
-- Supports multiple review platforms:
-  - G2
-  - Capterra
-  - TrustRadius (bonus)
-- Filters reviews based on the provided start and end dates
-- Organizes reviews into a clean JSON format
-- Assigns topics to reviews using simple keyword logic
-- Creates a topic vs frequency trend table
-- Prints the trend table in the terminal
-- Saves the final output in a JSON file
+The core objective is to demonstrate how unstructured user feedback can be converted into **structured intelligence** that helps teams understand customer sentiment at scale.
 
----
+ Why This Project Matters
 
-## Input Details
-The script asks for the following inputs:
-- **Company Name** – Name of the product/company
-- **Source** – `g2`, `capterra`, or `trustradius`
-- **Start Date** – Beginning of the review period (YYYY-MM-DD)
-- **End Date** – End of the review period (YYYY-MM-DD)
+* Companies receive thousands of reviews but struggle to extract **patterns**
+* Manual analysis is slow and biased
+* This script showcases a **scalable and automated approach** to identifying user pain points and strengths
 
----
+This project focuses on **logic, data modeling, and insight generation**, not just scraping.
 
-## Output
-The output is saved in:
+ Key Features
+
+✔ Interactive user-driven inputs
+✔ Multi-platform review support
+✔ Robust date-range filtering
+✔ Topic classification using keyword heuristics
+✔ Trend analysis via frequency aggregation
+✔ Clean, structured JSON output
+✔ Graceful error handling and validations
+
+
+
+ How It Works (High-Level Flow)
+
+1. User provides company name, review source, and date range
+2. Review data is loaded (sample dataset for reliability)
+3. Reviews are filtered based on time period
+4. Each review is analyzed and assigned a **feedback topic**
+5. A **topic-frequency trend table** is generated
+6. Final insights are displayed in the terminal and saved as JSON
+
+
+
+ Input Parameters
+
+The script prompts the user for:
+
+* **Company Name**
+* **Review Platform** (`g2`, `capterra`, `trustradius`)
+* **Start Date** (`YYYY-MM-DD`)
+* **End Date** (`YYYY-MM-DD`)
+
+
+Output Structure
+
+All results are saved in:
+
 
 output/sample_reviews.json
 
-### The JSON file contains:
-- Company name
-- Review source
-- Selected date range
-- Topic trend table (topic and frequency)
-- List of filtered reviews with:
-  - Title
-  - Review text
-  - Date
-  - Rating
-  - Reviewer name
-  - Assigned topic
 
----
+ Output Includes:
 
-## Topic Trend Table
-The topic trend table shows how many times each type of feedback appears within the selected date range.
+* Metadata (company, platform, date range)
+* Topic-wise trend summary
+* Filtered review list containing:
 
-Example topics:
-- Pricing Issue
-- Customer Support Issue
-- Performance
-- Ease of Use
-- General Feedback
+  * Review title
+  * Review text
+  * Review date
+  * Rating
+  * Reviewer name
+  * Auto-assigned topic
 
-This makes it easy to understand which areas users talk about the most.
+ Topic Trend Insights
 
----
+The trend table highlights **what users talk about most**, such as:
 
-## Error Handling
-The script handles common issues such as:
-- Invalid source names
-- Incorrect date format
-- Out-of-range dates
-- No matching reviews after filtering
+* Pricing Issues
+* Customer Support
+* Performance
+* Ease of Use
+* General Feedback
 
-Clear messages are shown instead of the program crashing.
+This enables quick identification of **product strengths and improvement areas**.
 
----
+## 🛡 Error Handling & Validation
 
-## Note on Review Data
-Platforms like G2 and Capterra restrict automated scraping.  
-To avoid unreliable behavior and blocking issues, sample review data is used to demonstrate the full logic of the project.
+The script safely handles:
 
-All processing steps — input validation, filtering, topic classification, trend generation, and output formatting — are fully implemented and can be extended to real data if access is permitted.
+* Invalid platform inputs
+* Incorrect date formats
+* Date ranges with no matching reviews
+* Unsupported sources
 
----
+User-friendly messages ensure **smooth execution without crashes**.
 
-## How to Run the Project
 
-### Step 1: Install dependencies
+ Note on Data Ethics
+
+Since platforms like G2 and Capterra limit automated scraping, **mock review datasets** are used.
+This ensures:
+
+* Ethical compliance
+* Stable execution
+* Focus on **core data processing logic**
+
+The architecture is extensible and can support real APIs if access is granted.
+
+
+ How to Run
+
+1️⃣ Install Dependencies
+
+bash
 pip install -r requirements.txt
 
+2️⃣ Execute Script
 
-### Step 2: Run the script
+```bash
 python scraper.py
+```
 
-### Step 3: Enter inputs when prompted
-Example:
-Enter company name: slack
-Enter source (g2, capterra, or trustradius): g2
-Enter start date: 2024-06-01
-Enter end date: 2024-07-31
+ 3️⃣ Sample Input
 
-
----
-
-## Technologies Used
-- Python
-- JSON
-- Built-in Python libraries (datetime, collections, os)
+```text
+Company Name: Slack  
+Source: g2  
+Start Date: 2024-06-01  
+End Date: 2024-07-31
+```
 
 ---
+Tech Stack
 
-## Summary
-This project demonstrates a complete review analysis workflow, starting from user input and ending with structured insights. It focuses on clean data handling, meaningful aggregation, and practical trend analysis while respecting real-world platform limitations.
+* **Python**
+* **JSON**
+* `datetime`, `collections`, `os`
+
+
